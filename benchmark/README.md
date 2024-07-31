@@ -2,12 +2,12 @@
 
 This repository contains a performance benchmark for various template engines. The goal is to evaluate and compare the performance of the following tools:
 
+- Itrules
 - Freemarker
 - Pebble
 - StringTemplate
 - JTE
 - Velocity
-- itrules
 - Xtend
 - XSLT
 - Acceleo
@@ -30,9 +30,8 @@ cd template-engine-benchmark
 ```
 
 ## Running the Benchmarks
-  
+  Run class benchmark.BenchmarkRunner
 ## Results
-
 After running the benchmarks, the results will be displayed in the console. You can compare the performance of the different template engines based on the output.
 
 ## Contributing

@@ -65,7 +65,7 @@ public class EnginesBenchmark {
 	@Benchmark
 	public void acceleo(Blackhole bh) {
 		Generate.main(
-				new String[]{"../emf/org.eclipse.acceleo.module.sample/src/org/eclipse/acceleo/module/sample/main/main.uml",
+				new String[]{"../emf/org.eclipse.acceleo.module.sample/bin/org/eclipse/acceleo/module/sample/main/main.uml",
 						"./gen/acceleo/"});
 	}
 }

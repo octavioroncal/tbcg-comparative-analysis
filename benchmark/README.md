@@ -26,7 +26,7 @@ To run the benchmarks, you will need to clone this repository and ensure that yo
 
 ```sh
 git clone https://github.com/octavioroncal/tbcg-benchmark.git
-cd template-engine-benchmark
+cd tbcg-benchmark
 ```
 
 ## Running the Benchmarks

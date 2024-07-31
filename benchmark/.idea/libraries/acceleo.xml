@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="acceleo">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../emf/org.eclipse.acceleo.module.sample/bin" />
+      <root url="file://$PROJECT_DIR$/lib/plugins" />
+      <root url="file://$PROJECT_DIR$/lib/plugins" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/lib/plugins" />
+      <root url="file://$PROJECT_DIR$/lib/plugins/com.sun.jna.source_5.14.0.v20231211-1200" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/lib/plugins" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib/plugins" recursive="false" type="SOURCES" />
+  </library>
+</component>

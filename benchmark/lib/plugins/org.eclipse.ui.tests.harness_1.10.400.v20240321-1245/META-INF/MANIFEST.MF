@@ -1,0 +1,179 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.1
+Build-Jdk-Spec: 17
+Bundle-ManifestVersion: 2
+Bundle-Name: Harness Plug-in
+Bundle-SymbolicName: org.eclipse.ui.tests.harness;singleton:=true
+Bundle-Version: 1.10.400.v20240321-1245
+Eclipse-BundleShape: dir
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.junit,org.ec
+ lipse.core.resources
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.ui.tests.harness,org.eclipse.ui.tests.harnes
+ s.tests,org.eclipse.ui.tests.harness.util,org.eclipse.ui.tests.internal
+ .util;x-internal:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: org.eclipse.ui.tests.harness
+Bundle-Vendor: Eclipse.org
+Eclipse-SourceReferences: scm:git:https://github.com/eclipse-platform/ec
+ lipse.platform.ui.git;path="tests/org.eclipse.ui.tests.harness";tag="I2
+ 0240321-1050";commitId=ae250bb4bdc26dd63ca8fc845b9c81d1567af5bb
+
+Name: plugin.xml
+SHA-256-Digest: +jYpskKGgp8xLS5R5CJoHDfMIOcXBWGq7vdUo+xKAgM=
+
+Name: org/eclipse/ui/tests/harness/util/CloseTestWindowsRule.class
+SHA-256-Digest: h8uJ3Y+1mm6Qh2DjnB1vKDA3JmgKexw25/rjy6/aW2o=
+
+Name: org/eclipse/ui/tests/harness/util/TestRunLogUtil$1.class
+SHA-256-Digest: MxBIWIRTCoV2eUG7rR5diA9PfzpfD/cNHhWj03gfr4M=
+
+Name: org/eclipse/ui/tests/harness/util/DisplayHelper.class
+SHA-256-Digest: f83pLhG8Tx0F1JOscHwi+II4acgry6lZxSRaFF3w40E=
+
+Name: org/eclipse/ui/tests/harness/util/Mocks$Mock.class
+SHA-256-Digest: mAg9y8psFy6yDzp9ncQayVN77D0TGZyWVHQLnlCUqVk=
+
+Name: org/eclipse/ui/tests/harness/util/DisplayWaiter$1.class
+SHA-256-Digest: y5SbRkkDXi6TEKcgHDcENg2X4yPHo8Jz5EKYTtegieo=
+
+Name: org/eclipse/ui/tests/harness/util/ActionUtil.class
+SHA-256-Digest: BfE2YWGxaLX9CYic0VfpQhmebZO1ry5pEcAukkmZFSM=
+
+Name: org/eclipse/ui/tests/harness/util/DisplayHelper$2.class
+SHA-256-Digest: +gII8mmsAuDgvU1ZTZwfuwKa9puIp1nknTlWzdgEbtA=
+
+Name: org/eclipse/ui/tests/harness/util/FileUtil.class
+SHA-256-Digest: xtiggr2rH41cLy9lqL6t9V83c5mT9+NduFB0KFw3b0s=
+
+Name: org/eclipse/ui/tests/harness/util/RCPTestWorkbenchAdvisor$2.class
+SHA-256-Digest: 5HMjJfdp0NfsYrY9vQtS7/IxCJwf0lvi87RrLHFKybU=
+
+Name: org/eclipse/ui/tests/harness/util/SWTEventHelper.class
+SHA-256-Digest: jGMV/w4FA0/gPMDVfh/MZtEGdzO0/jydYXkFLdRJOJc=
+
+Name: org/eclipse/ui/tests/internal/util/VerifyDialog$3.class
+SHA-256-Digest: WuSOoI2DR+0LzQOp5sR/8oOEQT5DRuKO71fmI1aH4VU=
+
+Name: org/eclipse/ui/tests/harness/util/ImageTests.class
+SHA-256-Digest: PJeKbtSOw8vRZxrbnB5VXp62XbkxT6Qg2CwafKDh4CM=
+
+Name: org/eclipse/ui/tests/harness/util/Mocks$EqualityComparator.class
+SHA-256-Digest: 78xcJHc0cwhsqI+tl6IFdFnLtv8UzSadezmJwCo+Dn0=
+
+Name: org/eclipse/ui/tests/harness/util/RCPTestWorkbenchAdvisor.class
+SHA-256-Digest: wbSTXdvBSA7mHpz4Zsqnus3f3t6t/MvvECUXZXfSkxE=
+
+Name: org/eclipse/ui/tests/harness/util/DisplayWaiter.class
+SHA-256-Digest: g055zj0J6ZyrE48RFLaajklNapa5RsRBowIlEZImfGQ=
+
+Name: org/eclipse/ui/tests/harness/util/FileTool.class
+SHA-256-Digest: d0hPBHo3Xp29FKlYYxVeBLLE+a6PiFhkrsSodQ2EppM=
+
+Name: org/eclipse/ui/tests/harness/util/UITestCase$ShellStateListener.cl
+ ass
+SHA-256-Digest: 1BqIKE4pKkICfgwtjIMyUMmcNWFaY3cZp7APcI0KcZk=
+
+Name: org/eclipse/ui/tests/harness/tests/MocksTest.class
+SHA-256-Digest: iIFWMSlvELrUSVGe3liYRbY5pwkWX+/wlB3/jr7aSJM=
+
+Name: org/eclipse/ui/tests/harness/util/EditorTestHelper.class
+SHA-256-Digest: dDlvx76rCONW4/74T7ipUKJNq+K9sTFYS9g/kVo5ueM=
+
+Name: org/eclipse/ui/tests/internal/util/AccessibilityTestPass.class
+SHA-256-Digest: 8zooKPnGVlF0ivTP80YLeojafDDsTlrADwuUXHJOQNQ=
+
+Name: org/eclipse/ui/tests/harness/util/Mocks$MockInvocationHandler.clas
+ s
+SHA-256-Digest: 2R/szS1KaBKJMD2JQ4x+nIRoo6O+CFT239lDv5UGXkY=
+
+Name: org/eclipse/ui/tests/harness/util/RCPTestWorkbenchAdvisor$1.class
+SHA-256-Digest: 32t6gV7TTM/vDbeYo+wd6BBkM0OsxAZTdWjP2iyvMmI=
+
+Name: org/eclipse/ui/tests/harness/util/UITestCase.class
+SHA-256-Digest: 4jf88R0eM+K5XOw9cDrhIv6awfWQfydcsJ+lj7mJJZc=
+
+Name: org/eclipse/ui/tests/internal/util/SizingTestPass.class
+SHA-256-Digest: ET1f1M9XDTvNd0jt4xXhn9NKA2dV4HOW4Q/W9naAqU8=
+
+Name: org/eclipse/ui/tests/harness/util/AutomationUtil.class
+SHA-256-Digest: TaOk7oRAtq++Gf5jFxkmlR3qVqNmceEf8RqcZgtoReI=
+
+Name: org/eclipse/ui/tests/harness/util/CloseTestWindowsRule$TestWindowL
+ istener.class
+SHA-256-Digest: cFrOnmJA1PJo/6IkiwtSKwcwNnIM/mbE1mdXCtce9io=
+
+Name: org/eclipse/ui/tests/harness/util/Mocks$MockInvocationHandler$Meth
+ odCall.class
+SHA-256-Digest: pwUM+PTBsQKct0A4fh50SKYROT5QdyL4kw7cYzsS0y4=
+
+Name: org/eclipse/ui/tests/harness/util/DisplayWaiter$1$ThreadChangedExc
+ eption.class
+SHA-256-Digest: Cl1frml+5Q0R5fQQGDnC5XqQUi7cH1pteZoMjKc7gmU=
+
+Name: org/eclipse/ui/tests/harness/util/SWTEventHelper$1.class
+SHA-256-Digest: mw4zUzGv57a5ejSVCy734lctVd4FMkrKouwgGmDQoBA=
+
+Name: org/eclipse/ui/tests/internal/util/VerifyDialog$1.class
+SHA-256-Digest: PpZ8Kvmx3xK6Ys4ZhrWK4D3Ko4JH0jGQhI63rCGA8K4=
+
+Name: org/eclipse/ui/tests/harness/util/EmptyPerspective.class
+SHA-256-Digest: jHXHmxy9L+Ph6JLi49JBa3PCLA3NBc/Cj/3yGRdIqss=
+
+Name: org/eclipse/ui/tests/internal/util/FocusTestPass.class
+SHA-256-Digest: oocYRsnF5qplGxyK09n5qw3CUmWsVagogesiU7ffabA=
+
+Name: org/eclipse/ui/tests/harness/util/TestRunLogUtil.class
+SHA-256-Digest: COwoymvluziMgnujZU/Rn/JB2PYfO3mOq0aXv9KWsXU=
+
+Name: org/eclipse/ui/tests/internal/util/VerifyDialog.class
+SHA-256-Digest: /WIfPk1XnphijGY9BnS0ckIhOtxESlymxfHXDtpi+Fc=
+
+Name: org/eclipse/ui/tests/harness/util/DialogCheck.class
+SHA-256-Digest: KyvYK+dUfMx53ePMAXRGmvzywt+JEjWBzMk1J50pA18=
+
+Name: org/eclipse/ui/tests/harness/util/EditorTestHelper$1.class
+SHA-256-Digest: q752KVhGLsDVtMknRiwCBcd0tHXrAXFZ/GRCg/tXXBQ=
+
+Name: org/eclipse/ui/tests/harness/util/UITestCase$Condition.class
+SHA-256-Digest: TqX8Q24cmCiIbAjuk30VZsyQqk8hePW3nc9NeOYUZJI=
+
+Name: org/eclipse/ui/tests/harness/util/UITestCase$1.class
+SHA-256-Digest: n0rwes2AwWH7hR+RV6H0uyZEEQeJdTWwuUuosruplG0=
+
+Name: org/eclipse/ui/tests/harness/util/DisplayWaiter$Timeout.class
+SHA-256-Digest: M9VDA2YBseRgtWVpu19om4Ia38VXHiNz9c9K6s2JLGU=
+
+Name: org/eclipse/ui/tests/internal/util/VerifyDialog$2.class
+SHA-256-Digest: FlSG4zmNN9yfq7rPwhLhQ6HCHXFi9PHdZrCv1wCmKfM=
+
+Name: org/eclipse/ui/tests/internal/util/FailureDialog.class
+SHA-256-Digest: nny0ui1snKMZEh7wlqdLkMPE7x2bHIOS1NmHgIcBYaQ=
+
+Name: about.html
+SHA-256-Digest: 7mbS+ztMDS7S5/aYvJ7U49bPd/pcr0CtAylhJdsaxfA=
+
+Name: org/eclipse/ui/tests/harness/util/ArrayUtil.class
+SHA-256-Digest: 7OvyoKkZqC0LTUCEREAOU/EDQB4jL0EH8PwBTHoNeXY=
+
+Name: org/eclipse/ui/tests/harness/util/DisplayHelper$1.class
+SHA-256-Digest: EHUqa1FrpdHaeLg04b59HbfZ5EnSlxM8aaSelkaW1xg=
+
+Name: org/eclipse/ui/tests/harness/tests/MocksTest$IPrimitive.class
+SHA-256-Digest: 1cru+6bMlEUGch4yqzFU6SYmLFJk7UNShzWgoMvNuzM=
+
+Name: org/eclipse/ui/tests/harness/util/Mocks.class
+SHA-256-Digest: 4877ELdSYsQv5zyHUBDtWzdE2aUn1Ra4VMUQQl2d26o=
+
+Name: org/eclipse/ui/tests/harness/AllTests.class
+SHA-256-Digest: nDt1CmG9+Jg5Qiv3a9ZWDGAWQuO738zsfV5BgVMv6Po=
+
+Name: org/eclipse/ui/tests/harness/util/CallHistory.class
+SHA-256-Digest: g3rARPw/odqflbhIVYFooAtE6la9ySejsFtvCqsKRas=
+
+Name: org/eclipse/ui/tests/harness/util/PlatformUtil.class
+SHA-256-Digest: tfLGlpPEbMm9TACsuksKlgixS9vCBfE4S8XO71f4Xlk=
+
+Name: org/eclipse/ui/tests/internal/util/IDialogTestPass.class
+SHA-256-Digest: gOM89ZytzZ/60j6mNUfWY2nrtyYm7+j0jnXj4BzngOo=
+

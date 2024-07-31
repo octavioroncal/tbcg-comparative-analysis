@@ -1,0 +1,47 @@
+«DEFINE main FOR Form»
+package com.example.form;
+
+public class «this.className» {
+
+    «EXPAND fieldDeclarations FOREACH this.fields»
+    
+    public «this.className»() {
+        «EXPAND constructorInitializations FOREACH this.fields»
+    }
+
+    «EXPAND gettersAndSetters FOREACH this.fields»
+
+    public void printFormDetails() {
+        System.out.println("Form Details:");
+        «EXPAND printFieldDetails FOREACH this.fields»
+    }
+}
+«ENDDEFINE»
+
+«DEFINE fieldDeclarations FOR Field»
+private «this.type» «this.name»;
+«ENDDEFINE»
+
+«DEFINE constructorInitializations FOR Field»
+«IF this.type == "String"»
+this.«this.name» = "«this.defaultValue»";
+«ELSEIF this.type == "int"»
+this.«this.name» = «this.defaultValue»;
+«ELSE»
+this.«this.name» = new «this.type»();
+«ENDIF»
+«ENDDEFINE»
+
+«DEFINE gettersAndSetters FOR Field»
+public «this.type» get«this.name.toFirstUpper»() {
+    return «this.name»;
+}
+
+public void set«this.name.toFirstUpper»(«this.type» «this.name») {
+    this.«this.name» = «this.name»;
+}
+«ENDDEFINE»
+
+«DEFINE printFieldDetails FOR Field»
+System.out.println("«this.name» («this.type»): " + «this.name»);
+«ENDDEFINE»

@@ -1,0 +1,62 @@
+<%@ jet package="jet.form" class="GeneratedClassTemplate" imports="java.util.*" %>
+package com.example.form;
+
+public class <%= className %> {
+    <%
+    List<Map<String, String>> fields = (List<Map<String, String>>) variables.get("fields");
+    for (Map<String, String> field : fields) {
+    %>
+    private <%= field.get("type") %> <%= field.get("name") %>;
+    <%
+    }
+    %>
+
+    public <%= className %>() {
+        <%
+        for (Map<String, String> field : fields) {
+            String fieldType = field.get("type");
+            String fieldName = field.get("name");
+            String fieldDefaultValue = field.get("defaultValue");
+        %>
+        <% if ("String".equals(fieldType)) { %>
+        this.<%= fieldName %> = "<%= fieldDefaultValue != null ? fieldDefaultValue : "" %>";
+        <% } else if ("int".equals(fieldType)) { %>
+        this.<%= fieldName %> = <%= fieldDefaultValue != null ? fieldDefaultValue : 0 %>;
+        <% } else { %>
+        this.<%= fieldName %> = new <%= fieldType %>();
+        <% } %>
+        <%
+        }
+        %>
+    }
+
+    <%
+    for (Map<String, String> field : fields) {
+        String fieldType = field.get("type");
+        String fieldName = field.get("name");
+        String fieldNameCap = fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);
+    %>
+    public <%= fieldType %> get<%= fieldNameCap %>() {
+        return <%= fieldName %>;
+    }
+
+    public void set<%= fieldNameCap %>(<%= fieldType %> <%= fieldName %>) {
+        this.<%= fieldName %> = <%= fieldName %>;
+    }
+    <%
+    }
+    %>
+
+    public void printFormDetails() {
+        System.out.println("Form Details:");
+        <%
+        for (Map<String, String> field : fields) {
+            String fieldName = field.get("name");
+            String fieldType = field.get("type");
+        %>
+        System.out.println("<%= fieldName %> (<%= fieldType %>): " + <%= fieldName %>);
+        <%
+        }
+        %>
+    }
+}

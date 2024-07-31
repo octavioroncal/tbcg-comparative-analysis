@@ -1,0 +1,15 @@
+<form>
+	<className>UserForm</className>
+	<fields>
+		<field>
+			<name>username</name>
+			<type>String</type>
+			<defaultValue>defaultUser</defaultValue>
+		</field>
+		<field>
+			<name>age</name>
+			<type>int</type>
+			<defaultValue>30</defaultValue>
+		</field>
+	</fields>
+</form>

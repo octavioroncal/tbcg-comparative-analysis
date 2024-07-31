@@ -1,0 +1,24 @@
+module formGenerator
+
+import org.eclipse.emf.mwe.utils.*
+import org.eclipse.xtend.typesystem.emf.*
+
+var targetDir = "src-gen"
+var modelPath = "model/form.ecore"
+
+Workflow {
+    bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
+        scanClassPath = true
+        platformUri = "${modelPath}/.."
+        registerGeneratedEPackage = "com.example.form.FormPackage"
+        
+    }
+
+    component = org.eclipse.xpand2.Generator {
+        expand = "templates::formTemplate::main FOREACH model::Form"
+        outlet = {
+            path = targetDir
+        }
+        fileEncoding = "UTF-8"
+    }
+}

@@ -1,0 +1,49 @@
+<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".java" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	string className = "UserForm";
+	var fields = new List<Field> {
+		new Field("username", "String", "\"defaultUser\""),
+		new Field("age", "int", "30")
+	};
+#>
+
+package com.example.form;
+
+public class <#= className #> {
+
+<#  foreach (var field in fields) { #>
+	private <#= field.Type #> <#= field.Name #>;
+<#  } #>
+
+	public <#= className #>() {
+<#  foreach (var field in fields) { #>
+	<#  if (field.Type == "String") { #>
+		this.<#= field.Name #> = <#= field.DefaultValue #>;
+	<#  } else if (field.Type == "int") { #>
+		this.<#= field.Name #> = <#= field.DefaultValue #>;
+	<#  } else { #>
+		this.<#= field.Name #> = new <#= field.Type #>();
+	<#  } #>
+<#  } #>
+	}
+
+<#  foreach (var field in fields) { #>
+	public <#= field.Type #> get<#= field.Name.Substring(0, 1).ToUpper() + field.Name.Substring(1) #>() {
+		return this.<#= field.Name #>;
+	}
+
+	public void set<#= field.Name.Substring(0, 1).ToUpper() + field.Name.Substring(1) #>(<#= field.Type #> <#= field.Name #>) {
+		this.<#= field.Name #> = <#= field.Name #>;
+	}
+<#  } #>
+
+	public void printFormDetails() {
+		System.out.println("Form Details:");
+<#  foreach (var field in fields) { #>
+		System.out.println("<#= field.Name #> (<#= field.Type #>): " + this.<#= field.Name #>);
+<#  } #>
+	}
+}

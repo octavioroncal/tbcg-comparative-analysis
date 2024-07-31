@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_U3rb4ENQEe-oB7oUauMhLQ" name="main">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_U6T5IENQEe-oB7oUauMhLQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_n2eBIENQEe-oB7oUauMhLQ" name="sample">
+    <packagedElement xmi:type="uml:Class" xmi:id="_XEeDkENQEe-oB7oUauMhLQ" name="Form">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_VFh1MENREe-oB7oUauMhLQ" name="className" type="_M9wc0ENREe-oB7oUauMhLQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HUbVcENUEe-oB7oUauMhLQ" name="fields" visibility="private" type="_YXeuIENREe-oB7oUauMhLQ" isUnique="false"/>
+      <nestedClassifier xmi:type="uml:PrimitiveType" xmi:id="_GkkGIENREe-oB7oUauMhLQ"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_M9wc0ENREe-oB7oUauMhLQ" name="String"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_YXeuIENREe-oB7oUauMhLQ" name="Field">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_OYxh8ENUEe-oB7oUauMhLQ" name="name" type="_M9wc0ENREe-oB7oUauMhLQ"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_r5nJoENUEe-oB7oUauMhLQ" name="defaultValue" type="_M9wc0ENREe-oB7oUauMhLQ"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_lskqgENSEe-oB7oUauMhLQ" name="has" visibility="package" memberEnd="_lssmUENSEe-oB7oUauMhLQ _lstNYkNSEe-oB7oUauMhLQ" navigableOwnedEnd="_lssmUENSEe-oB7oUauMhLQ">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lsrYMENSEe-oB7oUauMhLQ" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lsrYMUNSEe-oB7oUauMhLQ" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_lstNYkNSEe-oB7oUauMhLQ" name="form" type="_XEeDkENQEe-oB7oUauMhLQ" association="_lskqgENSEe-oB7oUauMhLQ"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_lssmUENSEe-oB7oUauMhLQ" name="field" type="_YXeuIENREe-oB7oUauMhLQ" aggregation="composite" association="_lskqgENSEe-oB7oUauMhLQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lstNYUNSEe-oB7oUauMhLQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,35 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/ocl/1.1.0/UML', 'http://www.eclipse.org/uml2/5.0.0/UML')]
+[template public generateElement(variableClase : Class)]
+[comment @main/]
+[file (variableClase.name + '.java', false, 'UTF-8')]
+public class [variableClase.name/]{
+ [GenerarVariablesGlobales(variableClase)/]
+ public [variableClase.name/]()
+ {
+ }
+ [GenerarGetSet(variableClase)/]
+}
+[/file]
+[/template]
+[comment Generar Variables Globales de la Clase/]
+[template public GenerarVariablesGlobales(variableClase:Class)]
+[for(atributo:Property | variableClase.attribute) separator('\n')]
+private [atributo.type.name/] [atributo.name/];
+[/for]
+
+[/template]
+
+[comment Generar Métodos Get/Set de la Clase/]
+[template public GenerarGetSet(variableClase:Class)]
+[for(atributo:Property | variableClase.attribute) separator('\n')]
+public [atributo.type.name/] get[atributo.name.toUpperFirst()/](){
+ return this.[atributo.name/];
+}
+[/for]
+[for(atributo:Property | variableClase.attribute) separator('\n')]
+public void set[atributo.name.toUpperFirst()/]([atributo.type.name/] [atributo.name/]){
+ this.[atributo.name/]=[atributo.name/];
+}
+[/for]
+[/template]

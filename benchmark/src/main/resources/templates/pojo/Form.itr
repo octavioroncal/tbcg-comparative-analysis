@@ -1,0 +1,38 @@
+rule type(form)
+	package com.example.form;
+
+    public class $className {
+		$field+declare...[$NL]
+
+		public $className() {
+			$field+declare...[$NL]
+		}
+
+		<<$field+get...[$NL]>>
+
+		<<$field+set...[$NL]>>
+
+		public void printFormDetails() {
+			System.out.println("Form Details:");
+			<<$field+print...[$NL]>>
+		}
+	}
+
+rule type(string) and trigger(declare)
+	 this.$name = "<<$defaultValue>>";
+
+rule type(int) and trigger(declare)
+	 this.$name = <<$defaultValue?0>>;
+
+rule trigger(get)
+	public $type get$name+FirstUpperCase() {
+		return $name;
+	}
+
+rule trigger(set)
+	public void set$name+FirstUpperCase($type value) {
+		this.$name = value;
+	}
+
+rule trigger(print)
+	System.out.println("$name ($type): " + $name);

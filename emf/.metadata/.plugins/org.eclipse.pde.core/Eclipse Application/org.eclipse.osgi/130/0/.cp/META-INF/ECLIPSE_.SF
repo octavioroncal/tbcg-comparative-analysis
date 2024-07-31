@@ -1,0 +1,118 @@
+Signature-Version: 1.0
+Created-By: 11.0.21 (Eclipse Adoptium)
+SHA-256-Digest-Manifest: 1pvnJrPvqBTTAnA/CX+GHNZgqaoBDlvn7ivTuaZdsEs=
+SHA-256-Digest-Manifest-Main-Attributes: mVAPEPdvhX3MxkA3YJyR2riRDKzbsiN
+ MHFllFtChccc=
+
+Name: intro/css/acceleo.properties
+SHA-256-Digest: R+gZ8osvo0XWjPT4a5iXUSfyC5x+afrT/0xWmPqIma0=
+
+Name: plugin.xml
+SHA-256-Digest: ts63t+2i7lp56t5LRZ4oFTcIkdOi8L4BzdoKlhbzmTk=
+
+Name: org/eclipse/acceleo/examples/internal/wizard/AbstractExampleWizard
+ $3.class
+SHA-256-Digest: Qa2aOxur7RyyB3N2WYwjNgIEEzbXt4I83G0nqC/aZX0=
+
+Name: icons/default.gif
+SHA-256-Digest: GOEWzUrDqaWTe/0z4RZyYovHOKIGQZDCROdSmQG55Vs=
+
+Name: examples/org.eclipse.acceleo.module.example.ecore2python.ui.zip
+SHA-256-Digest: bxncBKToaqnDSG3EPwVgb3fwlDl115BZoxb4bCD4Lp0=
+
+Name: org/eclipse/acceleo/examples/internal/acceleoexamplesmessages.prop
+ erties
+SHA-256-Digest: 5iPTf2DcC3ScGK5IjF9OBhAtoPB3VEe6Q0nbxuh8GM0=
+
+Name: org/eclipse/acceleo/examples/internal/AcceleoExamplesMessages.clas
+ s
+SHA-256-Digest: l/0hRFjLL43YhjBxhbqHhhRMeH+pqD6jTv+zsYkyS1U=
+
+Name: build.properties
+SHA-256-Digest: zGeemY34oRfXrQW4KN3/EBgpQogEAXDFookmOCukMHc=
+
+Name: plugin.properties
+SHA-256-Digest: gfR6Tm1b3AsyTCwqCSRKZXdrIgF+iiVNpmS2AWdcps0=
+
+Name: examples/org.eclipse.acceleo.module.example.uml2java.ui.zip
+SHA-256-Digest: r2vc/PmV/Li+C0Sn63XmbL1ymvvb3nXN9Vj4ThEUGsQ=
+
+Name: org/eclipse/acceleo/examples/internal/wizard/Ecore2PythonExampleWi
+ zard.class
+SHA-256-Digest: 24RQ5kYPEut0UzwkhXZ9ZYryJbXEz++xFwrszZNjmBk=
+
+Name: org/eclipse/acceleo/examples/internal/AcceleoExamplesPlugin.class
+SHA-256-Digest: xU+W2Xy0mAiip6IkX/zOD2eTXUqbhI4GQAgoJ39ORk4=
+
+Name: intro/images/acceleo-logo.png
+SHA-256-Digest: 0d7suLpzQQMdzolqMwLPX8kFQ3rStczC0NakdJA0kEY=
+
+Name: examples/org.eclipse.acceleo.examples.uml2java.model.zip
+SHA-256-Digest: Xq5UPItU+ohnxUrOLqOkvm7W8u42YvBvXXiNUTCg/C4=
+
+Name: about.html
+SHA-256-Digest: 5ae1mXt+O1m7NH9wENnf2o4uSz4WkJdF/o0dMOqV8es=
+
+Name: examples/org.eclipse.acceleo.examples.uml2java.ui.zip
+SHA-256-Digest: 9WTbUiXfTQrKINlRfW8Zc7Hw6kf2BaBpJgz8swxoB9Q=
+
+Name: intro/images/generators.png
+SHA-256-Digest: siDQd2+BxB++FjQSS7MhDFaJD5QIRAWX8xqkOoiMMKg=
+
+Name: org/eclipse/acceleo/examples/internal/wizard/AbstractExampleWizard
+ $2.class
+SHA-256-Digest: rT4pwTKuSBNv0kkLL7vBqf+V1jvx+xynxqrpy2sbGLM=
+
+Name: org/eclipse/acceleo/examples/internal/wizard/AbstractExampleWizard
+ $ProjectDescriptor.class
+SHA-256-Digest: 4GI7P/T+on4En11Zlr19vr0ofiTVgcaSxwBz2YaB1Ok=
+
+Name: intro/css/acceleo.css
+SHA-256-Digest: weezB+Y61b5q649HZ5Qukj8KHemJSxvBJU/Al5Odrlc=
+
+Name: org/eclipse/acceleo/examples/internal/wizard/Ecore2UnitTestsExampl
+ eWizard.class
+SHA-256-Digest: STAsMKwHEKHymVd4Uh/HDiDVa56JL+fRkZHGfpGD1uM=
+
+Name: examples/org.eclipse.acceleo.examples.uml2java.zip
+SHA-256-Digest: +M0vnQvRBF5UAHIjnwQVPHcNjhLuHyZgqUxHW4gIe8A=
+
+Name: intro/acceleo-samples.xml
+SHA-256-Digest: m58HCz607w4lNWJfyEOFTHeEs38G8GH6OKUE3xW97K8=
+
+Name: org/eclipse/acceleo/examples/internal/wizard/Uml2JavaExampleWizard
+ .class
+SHA-256-Digest: c/52CGNQs/BZYBU/QIl3pDlsYOl0km57Qiyh86A+Yrk=
+
+Name: org/eclipse/acceleo/examples/internal/intro/ShowSampleAction.class
+SHA-256-Digest: Tc2teAPzZXq9Jn0jjwKIoRLoEScYOa0QT3zNOdYB4sM=
+
+Name: examples/org.eclipse.acceleo.module.example.uml2java.helios.ui.zip
+SHA-256-Digest: UOOZ7Sr/PvBdYf4tWZjIPy6/t5EWX5gtpw+l1phR+dg=
+
+Name: examples/org.eclipse.acceleo.module.example.ecore2unittests.zip
+SHA-256-Digest: qIfSlbLTtFLLQ7byYo5em6O5tyEwdXXugn3KFiX8MVA=
+
+Name: org/eclipse/acceleo/examples/internal/wizard/AbstractExampleWizard
+ $1.class
+SHA-256-Digest: Y8JrPVwxfq34MuFYOSadS47HNdIFYPL+nFgUc5vd05g=
+
+Name: examples/org.eclipse.acceleo.module.example.uml2java.zip
+SHA-256-Digest: 4ngtU4NgKlvsRUb/jWebhgGUEgfGFDtlHrA9+YF6AHg=
+
+Name: org/eclipse/acceleo/examples/internal/wizard/AbstractExampleWizard
+ .class
+SHA-256-Digest: 4rMz/dm4P2yGMP8sC+VhebsiWuhZ5+M4pr5zvwhZKfg=
+
+Name: examples/org.eclipse.acceleo.module.example.uml2java.helios.zip
+SHA-256-Digest: J1Ao2crxMWLODRkwipCH9g5BN9vyKlN1APX9EGWoiOQ=
+
+Name: examples/org.eclipse.acceleo.module.example.ecore2python.zip
+SHA-256-Digest: VY5jPBrJX2Ir4ozfROQhoYiI3SJ1M/ikV8tQWrOFE8s=
+
+Name: intro/images/tutorial_hov.png
+SHA-256-Digest: Kg9ey4tczTroXIElshfJhy9booXarKnFdwPkW917TwM=
+
+Name: intro/images/tutorial.png
+SHA-256-Digest: sCAlnQsyaLpotAaVARCg1WseKPnDTkr1SCMJD/jvvf0=
+

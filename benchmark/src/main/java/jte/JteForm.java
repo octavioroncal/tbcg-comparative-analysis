@@ -18,8 +18,8 @@ public class JteForm {
 	}
 
 	public static String execute() {
-		CodeResolver codeResolver = new DirectoryCodeResolver(Path.of("/Users/oroncal/workspace/sandbox/engine-benchmarks/src/main/resources/templates/pojo")); // This is the directory where your .jte.marks files are located.
-		TemplateEngine templateEngine = TemplateEngine.create(codeResolver, ContentType.Html); // Two choices: Plain or Html
+		CodeResolver codeResolver = new DirectoryCodeResolver(Path.of("./src/main/resources/templates/pojo"));
+		TemplateEngine templateEngine = TemplateEngine.create(codeResolver, ContentType.Html);
 		TemplateOutput output = new StringOutput();
 		String className = "UserForm";
 		List<Field> fields = new ArrayList<>();

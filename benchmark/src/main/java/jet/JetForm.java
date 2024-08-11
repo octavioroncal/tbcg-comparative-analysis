@@ -21,7 +21,7 @@ public class JetForm {
 	}
 
 	private static void pluginWay() throws MalformedURLException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		String templatePath = "/Users/oroncal/workspace/sandbox/tbcg-benchmark/src/main/resources/templates/pojo/jet-form.template";
+		String templatePath = "/Users/oroncal/workspace/sandbox/tbcg-benchmark/benchmark/src/main/resources/templates/pojo/jet-form.template";
 		TemplateEmitter emitter = new TemplateEmitter(new File(templatePath).toURL());
 		Form form = new Form("Test Form", Arrays.asList("Name", "Age"));
 		emitter.parse();

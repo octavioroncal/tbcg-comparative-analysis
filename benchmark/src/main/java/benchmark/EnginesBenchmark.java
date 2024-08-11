@@ -4,6 +4,7 @@ import freemarker.FreemarkerForm;
 import freemarker.template.TemplateException;
 import itrules.ItrulesForm;
 import jte.JteForm;
+import mustache.MustacheForm;
 import org.eclipse.acceleo.module.sample.main.Generate;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
@@ -60,6 +61,11 @@ public class EnginesBenchmark {
 	@Benchmark
 	public void xslt(Blackhole bh) {
 		bh.consume(XSLTForm.execute());
+	}
+
+	@Benchmark
+	public void mustache(Blackhole bh) throws IOException {
+		bh.consume(MustacheForm.execute());
 	}
 
 	@Benchmark

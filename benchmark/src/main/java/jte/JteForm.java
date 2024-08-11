@@ -20,6 +20,7 @@ public class JteForm {
 	public static String execute() {
 		CodeResolver codeResolver = new DirectoryCodeResolver(Path.of("./src/main/resources/templates/pojo"));
 		TemplateEngine templateEngine = TemplateEngine.create(codeResolver, ContentType.Html);
+		templateEngine.precompileAll();
 		TemplateOutput output = new StringOutput();
 		String className = "UserForm";
 		List<Field> fields = new ArrayList<>();

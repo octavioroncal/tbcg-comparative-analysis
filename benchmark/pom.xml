@@ -139,7 +139,11 @@
             <artifactId>pebble</artifactId>
             <version>3.2.2</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.github.spullara.mustache.java</groupId>
+            <artifactId>compiler</artifactId>
+            <version>0.9.10</version>
+        </dependency>
         <dependency>
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-core</artifactId>

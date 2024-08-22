@@ -2,40 +2,40 @@ package com.example.form;
 
 public class {{className}} {
 
-    {{#fields}}
-    private {{type}} {{name}};
-    {{/fields}}
+	{{#fields}}
+	private {{type}} {{name}};
+	{{/fields}}
 
-    public {{className}}() {
-        {{#fields}}
-        {{#isString}}
-        this.{{name}} = "{{defaultValue}}";
-        {{/isString}}
-        {{#isInt}}
-        this.{{name}} = {{defaultValue}};
-        {{/isInt}}
-        {{^isString}}
-        {{^isInt}}
-        this.{{name}} = new {{type}}();
-        {{/isInt}}
-        {{/isString}}
-        {{/fields}}
-    }
+	public {{className}}() {
+		{{#fields}}
+		{{#isString}}
+		this.{{name}} = "{{defaultValue}}";
+		{{/isString}}
+		{{#isInt}}
+		this.{{name}} = {{defaultValue}};
+		{{/isInt}}
+		{{^isString}}
+		{{^isInt}}
+		this.{{name}} = new {{type}}();
+		{{/isInt}}
+		{{/isString}}
+		{{/fields}}
+	}
 
-    {{#fields}}
-    public {{type}} get{{nameCapitalized}}() {
-        return {{name}};
-    }
+	{{#fields}}
+	public {{type}} get{{nameCapitalized}}() {
+		return {{name}};
+	}
 
-    public void set{{nameCapitalized}}({{type}} {{name}}) {
-        this.{{name}} = {{name}};
-    }
-    {{/fields}}
+	public void set{{nameCapitalized}}({{type}} {{name}}) {
+		this.{{name}} = {{name}};
+	}
+	{{/fields}}
 
-    public void printFormDetails() {
-        System.out.println("Form Details:");
-        {{#fields}}
-        System.out.println("{{name}} ({{type}}): " + {{name}});
-        {{/fields}}
-    }
+	public void printFormDetails() {
+		System.out.println("Form Details:");
+		{{#fields}}
+		System.out.println("{{name}} ({{type}}): " + {{name}});
+		{{/fields}}
+	}
 }

@@ -2,7 +2,7 @@ package benchmark;
 
 import freemarker.FreemarkerForm;
 import freemarker.template.TemplateException;
-import itrules.ItrulesForm;
+import itrules.ItRulesJavaFormulary;
 import jte.JteForm;
 import mustache.MustacheForm;
 import org.openjdk.jmh.annotations.*;
@@ -49,7 +49,7 @@ public class EnginesBenchmark {
 
 	@Benchmark
 	public void itrules(Blackhole bh) {
-		bh.consume(ItrulesForm.execute());
+		bh.consume(ItRulesJavaFormulary.execute());
 	}
 
 	@Benchmark

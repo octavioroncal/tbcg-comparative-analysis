@@ -1,14 +1,12 @@
 rule type(form)
-	package $package;
+	<<package $package;>>
 
 	public class $className {
-		$field+declare...[$NL]
+		<<$field+declare...[$NL]>>
 
 		public $className() {
 			$field+init...[$NL]
 		}
-
-		<<$inner...[$NL]>>
 
 		<<$field+get...[$NL$NL]>>
 

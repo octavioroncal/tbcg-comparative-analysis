@@ -1,23 +1,23 @@
 package itrules;
 
-import io.intino.itrules.Engine;
 import io.intino.itrules.Frame;
 import io.intino.itrules.FrameBuilder;
 
-public class ItrulesForm {
+public class ItRulesJavaFormulary {
 
 	public static void main(String[] args) {
 		System.out.println(execute());
 	}
 
 	public static String execute() {
-		FormTemplate template = new FormTemplate();
+		ItRulesJavaFormularyTemplate template = new ItRulesJavaFormularyTemplate();
 		return template.render(frame());
 	}
 
 	private static Frame frame() {
 		return new FrameBuilder("form")
 				.add("className", "UserForm")
+				.add("package", "org.example.form")
 				.add("field", fields())
 				.toFrame();
 	}

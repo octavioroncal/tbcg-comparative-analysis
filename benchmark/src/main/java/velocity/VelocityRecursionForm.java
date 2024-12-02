@@ -17,10 +17,10 @@ import java.util.Map;
 public class VelocityRecursionForm {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println(execute());
+		System.out.println(execute(2));
 	}
 
-	public static String  execute() throws IOException {
+	public static String  execute(int subForms) throws IOException {
 		VelocityEngine velocityEngine = new VelocityEngine();
 		velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
 		velocityEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
@@ -28,12 +28,12 @@ public class VelocityRecursionForm {
 		Template template = velocityEngine.getTemplate("templates/pojo/velocity/velocity-java-recursion-formulary.vm");
 		StringWriter stringWriter = new StringWriter();
 		try (Writer writer = stringWriter) {
-			template.merge(form(), writer);
+			template.merge(form(subForms), writer);
 		}
 		return stringWriter.toString();
 	}
 
-	private static VelocityContext form() {
+	private static VelocityContext form(int subFormsSize) {
 		VelocityContext root = new VelocityContext();
 		root.put("packageName", "com.example.forms");
 		root.put("className", "UserForm");
@@ -42,7 +42,7 @@ public class VelocityRecursionForm {
 		fields.add(field("int", "age", 30));
 		root.put("fields", fields);
 		List<Map<String, Object>> subForms = new ArrayList<>();
-		subForms.add(subForm(1, 2));
+		subForms.add(subForm(1, subFormsSize));
 		root.put("subforms", subForms);
 		return root;
 	}

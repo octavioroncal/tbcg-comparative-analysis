@@ -15,15 +15,15 @@ public class FreemarkerRecursionForm {
 
 
 	public static void main(String[] args) throws IOException, TemplateException {
-		System.out.println(execute());
+		System.out.println(execute(2));
 	}
 
-	public static String execute() throws IOException, TemplateException {
+	public static String execute(int subForms) throws IOException, TemplateException {
 		Configuration cfg = new Configuration(new Version("2.3.31"));
 		cfg.setDirectoryForTemplateLoading(new File("src/main/resources"));
 		cfg.setDefaultEncoding("UTF-8");
 		cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
-		Map<String, Object> root = form();
+		Map<String, Object> root = form(subForms);
 		Template template = cfg.getTemplate("templates/pojo/freemarker/freemarker-java-recursion-formulary.ftl");
 		StringWriter writer = new StringWriter();
 		try (Writer fileWriter = writer) {
@@ -32,7 +32,7 @@ public class FreemarkerRecursionForm {
 		return writer.toString();
 	}
 
-	private static Map<String, Object> form() {
+	private static Map<String, Object> form(int subFormsSize) {
 		Map<String, Object> root = new HashMap<>();
 		root.put("packageName", "com.example.forms");
 		root.put("className", "UserForm");
@@ -41,7 +41,7 @@ public class FreemarkerRecursionForm {
 		fields.add(field("int", "age", 30));
 		root.put("fields", fields);
 		List<Map<String, Object>> subForms = new ArrayList<>();
-		subForms.add(subForm(1, 2));
+		subForms.add(subForm(1, subFormsSize));
 		root.put("subforms", subForms);
 		return root;
 	}

@@ -1,0 +1,52 @@
+[module FormGenerator('http://www.example.com/form')]
+
+[template public generate(form : Form)]
+[comment @main/]
+[file (form.className.concat('.java'), false, 'UTF-8')]
+public class [form.className] {
+
+    [for (field : form.fields)]
+    private [field.type] [field.name];
+    [/for]
+
+    public [form.className]() {
+        [for (field : form.fields)]
+        this.[field.name] = [defaultValue(field)];
+        [/for]
+    }
+
+    [for (field : form.fields)]
+    public [field.type] get[field.name.toUpperFirst()]() {
+        return [field.name];
+    }
+
+    public void set[field.name.toUpperFirst()]([field.type] [field.name]) {
+        this.[field.name] = [field.name];
+    }
+
+    [/for]
+	public void printFormDetails() {
+		System.out.println("Form Details:");
+		[for (field : subform.fields)]
+		System.out.println("[field.name] (type: [field.type]): " + this.[field.name]);
+		[/for]
+
+		[for (nested : subform.subforms)]
+		if (this.[nested.className.toLowerFirst()] != null) {
+			System.out.println("Subform: [nested.className]");
+			this.[nested.className.toLowerFirst()].printFormDetails();
+		}
+		[/for]
+	}
+}
+[/file]
+[/template]
+
+
+[template private defaultValue(field : Field)]
+	[switch (field.type)]
+		[case ("String")] "[field.defaultValue/]"[/case]
+		[case ("int")] [field.defaultValue/] [/case]
+		[default] new [field.type]() [/default]
+	[/switch]
+[/template]

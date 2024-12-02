@@ -1,0 +1,114 @@
+{{#packageName}}
+package {{packageName}};
+{{/packageName}}
+
+public class {{className}} {
+
+    {{#fields}}
+    private {{type}} {{name}};
+    {{/fields}}
+
+    {{#subforms}}
+    private {{className}} {{classNameLowerCase}} = new {{className}}();
+    {{/subforms}}
+
+	public {{className}}() {
+		{{#fields}}
+		{{#isString}}
+		this.{{name}} = "{{defaultValue}}";
+		{{/isString}}
+		{{#isInt}}
+		this.{{name}} = {{defaultValue}};
+		{{/isInt}}
+		{{^isString}}
+		{{^isInt}}
+		this.{{name}} = new {{type}}();
+		{{/isInt}}
+		{{/isString}}
+		{{/fields}}
+	}
+
+    {{#fields}}
+    public {{type}} get{{nameCapitalized}}() {
+        return {{name}};
+    }
+
+    public void set{{nameCapitalized}}({{type}} {{name}}) {
+        this.{{name}} = {{name}};
+    }
+    {{/fields}}
+
+    {{#subforms}}
+    public {{className}} get{{className}}() {
+        return {{classNameLowerCase}};
+    }
+
+    public void set{{className}}({{className}} {{classNameLowerCase}}) {
+        this.{{classNameLowerCase}} = {{classNameLowerCase}};
+    }
+    {{/subforms}}
+
+    public void printFormDetails() {
+        System.out.println("Form Details:");
+        {{#fields}}
+        System.out.println("{{name}} ({{type}}): " + {{name}});
+        {{/fields}}
+    }
+
+    {{#subforms}}
+    public class {{className}} {
+        {{#fields}}
+        private {{type}} {{name}};
+        {{/fields}}
+
+        {{#subforms}}
+        private {{className}} {{classNameLowerCase}} = new {{className}}();
+        {{/subforms}}
+
+        public {{className}}() {
+			{{#fields}}
+			{{#isString}}
+			this.{{name}} = "{{defaultValue}}";
+			{{/isString}}
+			{{#isInt}}
+			this.{{name}} = {{defaultValue}};
+			{{/isInt}}
+			{{^isString}}
+			{{^isInt}}
+			this.{{name}} = new {{type}}();
+			{{/isInt}}
+			{{/isString}}
+			{{/fields}}
+		}
+
+        {{#fields}}
+        public {{type}} get{{nameCapitalized}}() {
+            return {{name}};
+        }
+
+        public void set{{nameCapitalized}}({{type}} {{name}}) {
+            this.{{name}} = {{name}};
+        }
+        {{/fields}}
+
+        {{#subforms}}
+        public {{className}} get{{className}}() {
+            return {{classNameLowerCase}};
+        }
+
+        public void set{{className}}({{className}} {{classNameLowerCase}}) {
+            this.{{classNameLowerCase}} = {{classNameLowerCase}};
+        }
+
+        {{> .}} <!-- Recursión explícita -->
+        {{/subforms}}
+
+        public void printFormDetails() {
+            System.out.println("Subform Details: {{className}}");
+            {{#fields}}
+            System.out.println("{{name}} ({{type}}): " + {{name}});
+            {{/fields}}
+        }
+    }
+    {{/subforms}}
+}

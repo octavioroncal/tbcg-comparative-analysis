@@ -37,7 +37,7 @@ public class VelocityForm {
 		field2.put("defaultValue", 30);
 		fields.add(field2);
 		context.put("fields", fields);
-		Template template = velocityEngine.getTemplate("templates/pojo/velocity-java-formulary.ft");
+		Template template = velocityEngine.getTemplate("templates/pojo/velocity/velocity-java-formulary.vm");
 
 		StringWriter stringWriter = new StringWriter();
 		try (Writer writer = stringWriter) {

@@ -15,7 +15,7 @@ public class XSLTForm {
 	public static String execute() {
 		try {
 			TransformerFactory factory = TransformerFactory.newInstance();
-			Transformer transformer = factory.newTransformer(new StreamSource(new File("src/main/resources/templates/pojo/formTemplate.xsl")));
+			Transformer transformer = factory.newTransformer(new StreamSource(new File("src/main/resources/templates/pojo/xslt-java-formulary.xsl")));
 			StreamSource xmlSource = new StreamSource(new File("src/main/java/xslt/form.xml"));
 			ByteArrayOutputStream output = new ByteArrayOutputStream();
 			transformer.transform(xmlSource, new StreamResult(output));

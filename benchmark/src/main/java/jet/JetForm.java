@@ -21,7 +21,7 @@ public class JetForm {
 	}
 
 	private static void pluginWay() throws MalformedURLException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
-		String templatePath = "/Users/oroncal/workspace/sandbox/tbcg-benchmark/benchmark/src/main/resources/templates/pojo/jet-form.template";
+		String templatePath = "/Users/oroncal/workspace/sandbox/tbcg-benchmark/benchmark/src/main/resources/templates/pojo/jet-java-formulary.template";
 		TemplateEmitter emitter = new TemplateEmitter(new File(templatePath).toURL());
 		Form form = new Form("Test Form", Arrays.asList("Name", "Age"));
 		emitter.parse();
@@ -37,7 +37,7 @@ public class JetForm {
 	public static void eclipseWay() {
 		try {
 			Form form = new Form("Test Form", Arrays.asList("Name", "Age"));
-			String templatePath = "/Users/oroncal/workspace/sandbox/engine-benchmarks/src/main/resources/templates/pojo/jet-form.template";
+			String templatePath = "/Users/oroncal/workspace/sandbox/engine-benchmarks/src/main/resources/templates/pojo/jet-java-formulary.template";
 			JETEmitter emitter = new JETEmitter(templatePath, JetForm.class.getClassLoader());
 			// Ejecutar la plantilla con el objeto modelo
 			BasicMonitor.Printing progressMonitor = new BasicMonitor.Printing(System.out);

@@ -22,8 +22,6 @@ public class Field {
 	public String defaultValue() {
 		return defaultValue;
 	}
-	public String getNameCapitalized() {
-		return name.substring(0, 1).toUpperCase() + name.substring(1);
-	}
+
 }
 

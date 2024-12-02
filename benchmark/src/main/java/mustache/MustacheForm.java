@@ -26,10 +26,10 @@ public class MustacheForm {
 		Form form = new Form("UserForm", fields);
 
 		MustacheFactory mf = new DefaultMustacheFactory();
-		Mustache mustache = mf.compile("templates/pojo/form.mustache");
+		Mustache mustache = mf.compile("templates/pojo/mustache/mustache-java-formulary.mustache");
 
 		Map<String, Object> context = new HashMap<>();
-		context.put("className", form.className());
+		context.put("className", form.getClassName());
 		context.put("fields", fields);
 		context.put("isString", new FieldTypePredicate("String"));
 		context.put("isInt", new FieldTypePredicate("int"));

@@ -21,25 +21,10 @@ import java.util.concurrent.TimeUnit;
 @Fork(value = 2, warmups = 1)
 @Warmup(iterations = 1)
 @Measurement(iterations = 3)
-public class EnginesBenchmark {
+public class EnginesOnRecursionContextBenchmark {
 	@Benchmark
 	public void freemarker(Blackhole bh) throws IOException, TemplateException {
 		bh.consume(FreemarkerForm.execute());
-	}
-
-	@Benchmark
-	public void pebble(Blackhole bh) throws IOException {
-		bh.consume(PebbleForm.execute());
-	}
-
-	@Benchmark
-	public void stringtemplate(Blackhole bh) throws IOException {
-		bh.consume(STForm.execute());
-	}
-
-	@Benchmark
-	public void jte(Blackhole bh) {
-		bh.consume(JteForm.execute());
 	}
 
 	@Benchmark
@@ -55,16 +40,6 @@ public class EnginesBenchmark {
 	@Benchmark
 	public void xtend(Blackhole bh) {
 		bh.consume(XtendForm.execute());
-	}
-
-	@Benchmark
-	public void xslt(Blackhole bh) {
-		bh.consume(XSLTForm.execute());
-	}
-
-	@Benchmark
-	public void mustache(Blackhole bh) throws IOException {
-		bh.consume(MustacheForm.execute());
 	}
 
 	@Benchmark

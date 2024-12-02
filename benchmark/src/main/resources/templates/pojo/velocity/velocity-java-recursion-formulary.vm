@@ -1,0 +1,50 @@
+#if ($packageName)
+package $packageName;
+#end
+
+public class $className {
+
+#foreach ($field in $fields)
+private $field.type $field.name;
+#end
+
+#foreach ($subform in $subforms)
+private $subform.className ${subform.className.substring(0, 1).toLowerCase()}${subform.className.substring(1)} = new ${subform.className}();
+#end
+
+public $className() {
+#foreach ($field in $fields)
+	#if ($field.type == "String")
+	this.$field.name = "$!{field.defaultValue}";
+	#elseif ($field.type == "int")
+	this.$field.name = #if($!{field.defaultValue})$field.defaultValue#else 0#end;
+	#else
+	this.$field.name = new $field.type();
+	#end
+#end
+}
+
+#foreach ($field in $fields)
+public $field.type get${field.name.substring(0, 1).toUpperCase()}${field.name.substring(1)}() {
+	return $field.name;
+}
+
+public void set${field.name.substring(0, 1).toUpperCase()}${field.name.substring(1)}($field.type $field.name) {
+	this.$field.name = $field.name;
+}
+#end
+
+#foreach ($subform in $subforms)
+public $subform.className get${subform.className}() {
+	return ${subform.className.substring(0, 1).toLowerCase()}${subform.className.substring(1)};
+}
+
+public void set${subform.className}($subform.className ${subform.className.substring(0, 1).toLowerCase()}${subform.className.substring(1)}) {
+	this.${subform.className.substring(0, 1).toLowerCase()}${subform.className.substring(1)} = ${subform.className.substring(0, 1).toLowerCase()}${subform.className.substring(1)};
+}
+#end
+
+#foreach ($subform in $subforms)
+	#parse("templates/pojo/velocity/velocity-java-recursion-subform.vm")
+#end
+}

@@ -38,7 +38,7 @@ public class FreemarkerForm {
 		field2.put("defaultValue", 30);
 		fields.add(field2);
 		root.put("fields", fields);
-		Template template = cfg.getTemplate("templates/pojo/freemarker-java-formulary.ftl");
+		Template template = cfg.getTemplate("templates/pojo/freemarker/freemarker-java-formulary.ftl");
 		StringWriter writer = new StringWriter();
 		try (Writer fileWriter = writer) {
 			template.process(root, fileWriter);

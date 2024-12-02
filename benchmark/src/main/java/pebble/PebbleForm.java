@@ -19,7 +19,7 @@ public class PebbleForm {
 
     public static String  execute() throws IOException {
         PebbleEngine engine = new PebbleEngine.Builder().build();
-        PebbleTemplate compiledTemplate = engine.getTemplate("templates/pojo/pebble.peb");
+        PebbleTemplate compiledTemplate = engine.getTemplate("templates/pojo/pebble-java-formulary.peb");
         Map<String, Object> context = new HashMap<>();
         context.put("className", "UserForm");
         List<Map<String, Object>> fields = new ArrayList<>();

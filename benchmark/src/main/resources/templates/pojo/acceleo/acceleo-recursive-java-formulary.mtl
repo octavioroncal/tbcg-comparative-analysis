@@ -114,7 +114,6 @@ public class [subform.className] {
 }
 [/file]
 [/template]
-
 [template private defaultValue(field : Field)]
 	[switch (field.type)]
 		[case ("String")] "[field.defaultValue/]"[/case]

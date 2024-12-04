@@ -15,7 +15,7 @@ public class FreemarkerRecursionForm {
 
 
 	public static void main(String[] args) throws IOException, TemplateException {
-		System.out.println(execute(2));
+		System.out.println(execute(100));
 	}
 
 	public static String execute(int subForms) throws IOException, TemplateException {

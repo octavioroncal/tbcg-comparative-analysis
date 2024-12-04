@@ -1,91 +1,78 @@
-«IF packageName != null»
-package «packageName»;
+«IF formData.packageName != null»
+package «formData.packageName»;
 «ENDIF»
 
-class «className» {
+public class «formData.className» {
 
-    «FOR field : fields»
-    private «field.type» «field.name»;
-    «ENDFOR»
+  «FOR field : formData.fields»
+  private «field.type» «field.name»;
+  «ENDFOR»
 
-    «FOR subform : subforms»
-    private «subform.className» «subform.className.toFirstLower» = new «subform.className»();
-    «ENDFOR»
+  «FOR subform : formData.subforms»
+  private «subform.className» «subform.className.toFirstLower» = new «subform.className»();
+  «ENDFOR»
 
-    def «className»() {
-        «FOR field : fields»
-        «SWITCH field.type»
-        «CASE "String"»
-        this.«field.name» = "«field.defaultValue ?: ""»";
-        «CASE "int"»
-        this.«field.name» = «field.defaultValue ?: "0"»;
-        «DEFAULT»
-        this.«field.name» = new «field.type»();
-        «ENDSWITCH»
-        «ENDFOR»
-    }
+  public «formData.className»() {
+	 «FOR field : formData.fields»
+	 this.«field.name» = «getDefaultValue(field)»;
+	 «ENDFOR»
+  }
 
-    «FOR field : fields»
-    def «field.type» get«field.name.toFirstUpper»() {
-        return «field.name»;
-    }
+  «FOR field : formData.fields»
+  public «field.type» get«field.name.toFirstUpper»() {
+	 return «field.name»;
+  }
 
-    def void set«field.name.toFirstUpper»(«field.type» «field.name») {
-        this.«field.name» = «field.name»;
-    }
-    «ENDFOR»
+  public void set«field.name.toFirstUpper»(«field.type» «field.name») {
+	 this.«field.name» = «field.name»;
+  }
+  «ENDFOR»
 
-    «FOR subform : subforms»
-    def «subform.className» get«subform.className.toFirstUpper»() {
-        return «subform.className.toFirstLower»;
-    }
+  public void printFormDetails() {
+	 System.out.println("Form Details:");
+	 «FOR field : formData.fields»
+	 System.out.println("«field.name» (type: «field.type»): " + this.«field.name»);
+	 «ENDFOR»
+  }
 
-    def void set«subform.className.toFirstUpper»(«subform.className» «subform.className.toFirstLower») {
-        this.«subform.className.toFirstLower» = «subform.className.toFirstLower»;
-    }
-    «ENDFOR»
-
-    «FOR subform : subforms»
-    «generateSubform(subform)»
-    «ENDFOR»
+  «FOR subform : formData.subforms»
+  «generateInnerSubform(subform)»
+  «ENDFOR»
 }
+ public class «subform.className» {
 
-def generateSubform(subform : Subform) '''
-class «subform.className» {
+  «FOR field : subform.fields»
+  private «field.type» «field.name»;
+  «ENDFOR»
 
-    «FOR field : subform.fields»
-    private «field.type» «field.name»;
-    «ENDFOR»
+  «FOR nestedSubform : subform.subforms»
+  private «nestedSubform.className» «nestedSubform.className.toFirstLower» = new «nestedSubform.className»();
+  «ENDFOR»
 
-    «FOR nestedSubform : subform.subforms»
-    private «nestedSubform.className» «nestedSubform.className.toFirstLower» = new «nestedSubform.className»();
-    «ENDFOR»
+  public «subform.className»() {
+	 «FOR field : subform.fields»
+	 this.«field.name» = «getDefaultValue(field)»;
+	 «ENDFOR»
+  }
 
-    def «subform.className»() {
-        «FOR field : subform.fields»
-        «SWITCH field.type»
-        «CASE "String"»
-        this.«field.name» = "«field.defaultValue ?: ""»";
-        «CASE "int"»
-        this.«field.name» = «field.defaultValue ?: "0"»;
-        «DEFAULT»
-        this.«field.name» = new «field.type»();
-        «ENDSWITCH»
-        «ENDFOR»
-    }
+  «FOR field : subform.fields»
+  public «field.type» get«field.name.toFirstUpper»() {
+	 return «field.name»;
+  }
 
-    «FOR field : subform.fields»
-    def «field.type» get«field.name.toFirstUpper»() {
-        return «field.name»;
-    }
+  public void set«field.name.toFirstUpper»(«field.type» «field.name») {
+	 this.«field.name» = «field.name»;
+  }
+  «ENDFOR»
 
-    def void set«field.name.toFirstUpper»(«field.type» «field.name») {
-        this.«field.name» = «field.name»;
-    }
-    «ENDFOR»
-
-    «FOR nestedSubform : subform.subforms»
-    «generateSubform(nestedSubform, packageName)»
-    «ENDFOR»
+  «FOR nestedSubform : subform.subforms»
+  «generateInnerSubform(nestedSubform)»
+  «ENDFOR»
 }
-'''
+def String getDefaultValue(Field field) {
+   switch field.type {
+	  case "String": return "\"" + (field.defaultValue ?: "") + "\""
+	  case "int": return field.defaultValue ?: "0"
+	  default: return "new " + field.type + "()"
+   }
+}

@@ -51,11 +51,6 @@ class FormRecursiveGenerator {
 	   '''
     }
 
-    /**
-	* Genera la definición de una clase interna recursivamente.
-	* @param subform Subformulario a generar.
-	* @return Código Java de la clase interna.
-	*/
     def String generateInnerSubform(Form subform) {
 	   '''
 	   public class «subform.className» {

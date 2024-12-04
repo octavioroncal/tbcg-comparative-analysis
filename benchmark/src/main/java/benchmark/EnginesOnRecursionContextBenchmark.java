@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 3)
 public class EnginesOnRecursionContextBenchmark {
 
-	public static final int SUB_FORMS = 100;
+	public static final int SUB_FORMS = 10;
 
 	@Benchmark
 	public void freemarker(Blackhole bh) throws IOException, TemplateException {

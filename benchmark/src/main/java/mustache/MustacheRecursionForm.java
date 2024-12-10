@@ -14,13 +14,13 @@ import java.util.Map;
 public class MustacheRecursionForm {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println(execute());
+		System.out.println(execute(10));
 	}
 
-	public static String execute() throws IOException {
+	public static String execute(int subForms) throws IOException {
 		MustacheFactory mf = new DefaultMustacheFactory();
 		Mustache mustache = mf.compile("templates/pojo/mustache/mustache-java-recursion-formulary.mustache");
-		Map<String, Object> context = form();
+		Map<String, Object> context = form(subForms);
 		context.put("isString", new FieldTypePredicate("String"));
 		context.put("isInt", new FieldTypePredicate("int"));
 		StringWriter writer = new StringWriter();
@@ -29,7 +29,7 @@ public class MustacheRecursionForm {
 	}
 
 
-	private static Map<String, Object> form() {
+	private static Map<String, Object> form(int subFormsSize) {
 		Map<String, Object> root = new HashMap<>();
 		root.put("packageName", "com.example.forms");
 		root.put("className", "UserForm");
@@ -39,7 +39,7 @@ public class MustacheRecursionForm {
 		fields.add(field("int", "age", 30));
 		root.put("fields", fields);
 		List<Map<String, Object>> subForms = new ArrayList<>();
-		subForms.add(subForm(1, 2));
+		subForms.add(subForm(1, subFormsSize));
 		root.put("subforms", subForms);
 		return root;
 	}
@@ -89,6 +89,4 @@ public class MustacheRecursionForm {
 			return type.equals(field.type());
 		}
 	}
-
-
 }

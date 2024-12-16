@@ -3,7 +3,6 @@ package benchmark;
 import freemarker.FreemarkerRecursionForm;
 import freemarker.template.TemplateException;
 import itrules.ItRulesJavaRecursionFormulary;
-import mustache.MustacheRecursionForm;
 import org.eclipse.acceleo.module.sample.main.Generate;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;

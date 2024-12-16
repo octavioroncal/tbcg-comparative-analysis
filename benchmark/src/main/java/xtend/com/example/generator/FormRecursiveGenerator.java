@@ -142,8 +142,7 @@ public class FormRecursiveGenerator {
     {
       for(final Form subform_1 : formData.subforms) {
         _builder.append("\t\t  ");
-        String _generateInnerSubform = this.generateInnerSubform(subform_1);
-        _builder.append(_generateInnerSubform, "\t\t  ");
+        _builder.append(generate(subform_1), "\t\t  ");
         _builder.newLineIfNotEmpty();
       }
     }

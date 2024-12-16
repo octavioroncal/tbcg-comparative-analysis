@@ -16,7 +16,7 @@ public class <form.className> {
 	public <field.type> get<field.name; format="cap">() {
 		return this.<field.name>;
 	\}
-1
+
 	public void set<field.name; format="cap">(<field.type> <field.name>) {
 		this.<field.name> = <field.name>;
 	\}

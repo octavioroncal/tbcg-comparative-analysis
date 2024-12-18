@@ -3,7 +3,6 @@ package benchmark;
 import freemarker.FreemarkerRecursionForm;
 import freemarker.template.TemplateException;
 import itrules.ItRulesJavaRecursionFormulary;
-import org.eclipse.acceleo.module.sample.main.Generate;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import velocity.VelocityRecursionForm;
@@ -19,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 3)
 public class EnginesOnRecursionContextBenchmark {
 
-	public static final int SUB_FORMS = 100;
+	public static final int SUB_FORMS = 10;
 
 	@Benchmark
 	public void freemarker(Blackhole bh) throws IOException, TemplateException {
@@ -41,10 +40,10 @@ public class EnginesOnRecursionContextBenchmark {
 		bh.consume(XtendRecursionForm.execute(SUB_FORMS));
 	}
 
-	@Benchmark
-	public void acceleo(Blackhole bh) {
-		Generate.main(
-				new String[]{"../emf/org.eclipse.acceleo.module.sample/bin/org/eclipse/acceleo/module/sample/main/main.uml",
-						"./gen/acceleo/"});
-	}
+//	@Benchmark
+//	public void acceleo(Blackhole bh) {
+//		Generate.main(
+//				new String[]{"../emf/org.eclipse.acceleo.module.sample/bin/org/eclipse/acceleo/module/sample/main/main.uml",
+//						"./gen/acceleo/"});
+//	}
 }

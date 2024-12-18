@@ -13,9 +13,8 @@ import java.util.Map;
 
 public class FreemarkerRecursionForm {
 
-
 	public static void main(String[] args) throws IOException, TemplateException {
-		System.out.println(execute(2));
+		System.out.println(execute(100));
 	}
 
 	public static String execute(int subForms) throws IOException, TemplateException {
@@ -50,7 +49,7 @@ public class FreemarkerRecursionForm {
 		Map<String, Object> subForm = new HashMap<>();
 		subForm.put("className", "Form" + level);
 		List<Map<String, Object>> fields = new ArrayList<>();
-		fields.add(field("String", "title", "Default Title " +level));
+		fields.add(field("String", "title", "Default Title " + level));
 		fields.add(field("int", "age", level));
 		subForm.put("fields", fields);
 		if (level < maxLevel) {

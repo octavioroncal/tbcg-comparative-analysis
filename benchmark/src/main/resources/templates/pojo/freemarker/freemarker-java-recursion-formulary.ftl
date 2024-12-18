@@ -55,6 +55,12 @@ public class ${className} {
 	</#list>
 	}
 
+<#if subforms??>
+    <#list subforms as subform>
+        <@generateSubform subform=subform/>
+    </#list>
+</#if>
+
 <#macro generateSubform subform>
 	public class ${subform.className} {
     <#list subform.fields as field>
@@ -102,7 +108,7 @@ public class ${className} {
     </#if>
 
 		public void printFormDetails() {
-			System.out.println("Subform Details: ${subform.className}");
+			System.out.println("Form Details: ${subform.className}");
 		<#list subform.fields as field>
 			System.out.println("${field.name} (${field.type}): " + ${field.name});
 		</#list>
@@ -116,9 +122,4 @@ public class ${className} {
 	}
 </#macro>
 
-<#if subforms??>
-    <#list subforms as subform>
-        <@generateSubform subform=subform/>
-    </#list>
-</#if>
 }

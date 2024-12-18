@@ -19,6 +19,8 @@ rule type(form)
 
 		<<$form+get...[$NL]>>
 
+		<<$form+set...[$NL]>>
+
 		<<$field+get...[$NL]>>
 
 		<<$field+set...[$NL]>>

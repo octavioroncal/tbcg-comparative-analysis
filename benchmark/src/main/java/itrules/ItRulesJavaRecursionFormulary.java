@@ -6,12 +6,11 @@ import io.intino.itrules.FrameBuilder;
 public class ItRulesJavaRecursionFormulary {
 
 	public static void main(String[] args) {
-		System.out.println(execute(2));
+		System.out.println(execute(1));
 	}
 
 	public static String execute(int subForms) {
-		ItrulesJavaRecursionFormularyTemplate template = new ItrulesJavaRecursionFormularyTemplate();
-		return template.render(frame(subForms));
+		return new ItrulesJavaRecursionFormularyTemplate().render(frame(subForms));
 	}
 
 	private static Frame frame(int subForms) {
@@ -29,18 +28,8 @@ public class ItRulesJavaRecursionFormulary {
 		subForm.add("name", "Form" + level);
 		subForm.add("type", "Form" + level);
 		subForm.add("field", fields());
-		if (level < maxLevel) {
-			subForm.add("form", subForm(level + 1, maxLevel));
-		}
+		if (level < maxLevel) subForm.add("form", subForm(level + 1, maxLevel));
 		return subForm.toFrame();
-	}
-
-	private static Frame field(String type, String name, Object defaultValue) {
-		FrameBuilder f = new FrameBuilder("field", type);
-		f.add("type", type);
-		f.add("name", name);
-		f.add("defaultValue", defaultValue);
-		return f.toFrame();
 	}
 
 	private static Frame[] fields() {

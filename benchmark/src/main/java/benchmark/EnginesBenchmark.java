@@ -5,6 +5,7 @@ import freemarker.template.TemplateException;
 import itrules.ItRulesJavaFormulary;
 import jte.JteForm;
 import mustache.MustacheForm;
+import org.eclipse.acceleo.module.sample.main.Generate;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 import pebble.PebbleForm;
@@ -69,8 +70,8 @@ public class EnginesBenchmark {
 
 	@Benchmark
 	public void acceleo(Blackhole bh) {
-//		Generate.main(
-//				new String[]{"../emf/org.eclipse.acceleo.module.sample/bin/org/eclipse/acceleo/module/sample/main/main.uml",
-//						"./gen/acceleo/"});
+		Generate.main(
+				new String[]{"../emf/org.eclipse.acceleo.module.sample/bin/org/eclipse/acceleo/module/sample/main/main.uml",
+						"./gen/acceleo/"});
 	}
 }

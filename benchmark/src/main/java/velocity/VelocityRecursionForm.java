@@ -9,22 +9,21 @@ import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class VelocityRecursionForm {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println(execute(2));
+		System.out.println(execute(100));
 	}
 
 	public static String  execute(int subForms) throws IOException {
 		VelocityEngine velocityEngine = new VelocityEngine();
 		velocityEngine.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
 		velocityEngine.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
-		velocityEngine.init();
+		Properties properties = new Properties();
+		properties.load(VelocityRecursionForm.class.getClassLoader().getResourceAsStream("velocity.properties"));
+		velocityEngine.init(properties);
 		Template template = velocityEngine.getTemplate("templates/pojo/velocity/velocity-java-recursion-formulary.vm");
 		StringWriter stringWriter = new StringWriter();
 		try (Writer writer = stringWriter) {

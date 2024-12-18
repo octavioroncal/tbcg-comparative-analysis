@@ -5,6 +5,7 @@ import xtend.com.example.Form;
 import xtend.com.example.generator.FormGenerator;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class XtendForm {
 				new Field("username", "String", "\"defaultUser\""),
 				new Field("age", "int", "30")
 		);
-		Form form = new Form("org.example","UserForm", fields, List.of());
+		Form form = new Form("org.example", "UserForm", fields, new ArrayList<>());
 		FormGenerator template = new FormGenerator();
 		return template.generate(form);
 	}

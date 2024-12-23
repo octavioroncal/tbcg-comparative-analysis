@@ -1,4 +1,4 @@
-# Template Engine Performance Benchmark
+# Template Engine Comparative Analysis
 
 This repository contains a performance benchmark for various template engines. The goal is to evaluate and compare the performance of the following tools:
 

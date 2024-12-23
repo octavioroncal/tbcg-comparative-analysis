@@ -1,12 +1,12 @@
 package benchmark;
 
-import freemarker.FreemarkerRecursionForm;
+import cases.form.freemarker.FreemarkerRecursionForm;
 import freemarker.template.TemplateException;
-import itrules.ItRulesJavaRecursionFormulary;
+import cases.form.itrules.ItRulesJavaRecursionFormulary;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
-import velocity.VelocityRecursionForm;
-import xtend.XtendRecursionForm;
+import cases.form.velocity.VelocityRecursionForm;
+import cases.form.xtend.XtendRecursionForm;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 @Measurement(iterations = 3)
 public class EnginesOnRecursionContextBenchmark {
 
-	public static final int SUB_FORMS = 10;
+	public static final int SUB_FORMS = 5;
 
 	@Benchmark
 	public void freemarker(Blackhole bh) throws IOException, TemplateException {

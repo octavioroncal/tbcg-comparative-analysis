@@ -1,5 +1,5 @@
-@import jte.Form
-@import jte.Field
+@import cases.form.jte.Form
+@import cases.form.jte.Field
 
 @param Form form
 

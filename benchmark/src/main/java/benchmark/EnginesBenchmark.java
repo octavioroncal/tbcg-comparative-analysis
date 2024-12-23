@@ -1,18 +1,17 @@
 package benchmark;
 
-import freemarker.FreemarkerForm;
+import cases.form.freemarker.FreemarkerForm;
 import freemarker.template.TemplateException;
-import itrules.ItRulesJavaFormulary;
-import jte.JteForm;
-import mustache.MustacheForm;
-import org.eclipse.acceleo.module.sample.main.Generate;
+import cases.form.itrules.ItRulesJavaFormulary;
+import cases.form.jte.JteForm;
+import cases.form.mustache.MustacheForm;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
-import pebble.PebbleForm;
-import stringtemplate.STForm;
-import velocity.VelocityForm;
-import xslt.XSLTForm;
-import xtend.XtendForm;
+import cases.form.pebble.PebbleForm;
+import cases.form.stringtemplate.STForm;
+import cases.form.velocity.VelocityForm;
+import cases.form.xslt.XSLTForm;
+import cases.form.xtend.XtendForm;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -70,8 +69,8 @@ public class EnginesBenchmark {
 
 	@Benchmark
 	public void acceleo(Blackhole bh) {
-		Generate.main(
-				new String[]{"../emf/org.eclipse.acceleo.module.sample/bin/org/eclipse/acceleo/module/sample/main/main.uml",
-						"./gen/acceleo/"});
+//		org.eclipse.acceleo.module.sample.main.Generate.main(
+//				new String[]{"../emf/org.eclipse.acceleo.module.sample/bin/org/eclipse/acceleo/module/sample/main/main.uml",
+//						"./gen/acceleo/"});
 	}
 }

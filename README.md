@@ -5,13 +5,12 @@ This repository contains a performance benchmark for various template engines. T
 - Itrules
 - Freemarker
 - Pebble
-- StringTemplate
+- StringTemplate 4
 - JTE
 - Velocity
 - Xtend
 - XSLT
 - Acceleo
-- Xpand
 
 ## Getting Started
 
